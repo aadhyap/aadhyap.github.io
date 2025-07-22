@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>No Limits | Aadhya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .layout {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 140px;
+      padding: 40px 20px;
+      background-color: #111;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-size: 14px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 14px;
+  font-family: 'Source Code Pro', monospace;
+    }
+
+    .sidebar a:hover {
+      color: #75FCC0;
+    }
+
+    .main {
+      flex: 1;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .title {
+      font-size: 36px;
+      font-weight: 700;
+      color: #75FCC0;
+      margin-bottom: 20px;
+      position: sticky;
+      top: 0;
+      background-color: #111;
+      padding: 20px 0;
+      z-index: 10;
+      width: 100%;
+      text-align: center;
+    }
+
+    .diagram {
+      max-width: 100%;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(117, 252, 192, 0.25);
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      .main {
+        padding: 30px 20px;
+      }
+
+      .title {
+        font-size: 28px;
+      }
+
+      .diagram {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <div class="main">
+      <h1 class="title">No Limits</h1>
+      <img class="diagram" src="../images/diagram1.png" alt="No Limits Diagram 1"/>
+      <img class="diagram" src="../images/diagram2.png" alt="No Limits Diagram 2"/>
+    </div>
+    <div class="sidebar">
+      <a href="../index.html">- Home</a>
+      <a href="../contact.html">- Contact</a>
+    </div>
+  </div>
+</body>
+</html>

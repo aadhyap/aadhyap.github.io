@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Aadhya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 80px;
+      margin-top: -40px;
+      background-color: #f8f6f1;
+      color: #000;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .logo {
+      font-size: 36px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .left-text {
+      position: absolute;
+      top: 120px;
+      left: 80px;
+      max-width: 200px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .center-text {
+      font-family: 'Source Code Pro', monospace;
+      position: absolute;
+      top: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 18px;
+    }
+
+    .center-text p {
+      margin: 12px 0;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 100px;
+      right: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      font-family: 'Source Code Pro', monospace;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .home-link {
+      position: absolute;
+      bottom: 40px;
+      right: 80px;
+      font-weight: bold;
+      font-family: 'Source Code Pro', monospace;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 40px 20px;
+      }
+
+      .left-text,
+      .center-text,
+      .nav-links,
+      .home-link {
+        position: static;
+        transform: none;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .left-text {
+        max-width: 100%;
+      }
+
+      .center-text {
+        margin-top: 20px;
+      }
+
+      .nav-links {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .home-link {
+        text-align: center;
+        margin-top: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">aadhya</div>
+
+  <div class="left-text">
+    For inquiries<br>email me 
+  </div>
+
+  <div class="center-text">
+    <p>aputtur@outlook.com</p>
+  </div>
+
+  <div class="nav-links">
+        <a href="index.html">- Home</a>
+  </div>
+
+  <div class="home-link">
+    &lt;&lt; home
+  </div>
+</body>
+</html>
