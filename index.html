@@ -23,18 +23,18 @@
   .sidebar {
   position: fixed;
   top: 0;
-  right: 0; /* ✅ Move it to the right */
+  right: 0;
   width: 340px;
+  max-width: 60vw;        /* ✅ don’t let it be wider than 60% of the screen */
   height: 100vh;
   background-color: #111;
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* aligns links to the right side */
+  align-items: flex-start;
   gap: 20px;
   font-size: 20px;
   font-family: 'Source Code Pro', monospace;
-
 }
 
 
@@ -134,26 +134,23 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 768px) {
-      .sidebar {
-        display: none;
-      }
+   @media (max-width: 768px) {
+  /* remove the display:none line */
+  .content {
+    margin-left: 0;
+    padding: 20px;
+  }
 
-      .content {
-        margin-left: 0;
-        padding: 20px;
-      }
+  .app-block {
+    flex-direction: column;
+    align-items: center;
+  }
 
-      .app-block {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .app-image img {
-        width: 100%;
-        height: auto;
-      }
-    }
+  .app-image img {
+    width: 100%;
+    height: auto;
+  }
+}
   </style>
 </head>
 <body>
