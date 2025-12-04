@@ -86,15 +86,29 @@
 
     .apparel-item .image {
       flex: 1 1 45%;
+      perspective: 1000px;
     }
 
+    /* ---------------- INTERACTIVE IMAGE EFFECTS ---------------- */
     .apparel-item .image img {
       width: 100%;
       border-radius: 12px;
       object-fit: cover;
       box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+      transition: 
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        filter 0.35s ease;
+      transform-style: preserve-3d;
     }
 
+    .apparel-item .image img:hover {
+      transform: scale(1.05) rotateX(6deg) rotateY(-6deg);
+      box-shadow: 0 12px 35px rgba(117, 252, 192, 0.35);
+      filter: brightness(1.15);
+    }
+
+    /* ---------------- DESCRIPTION ---------------- */
     .apparel-item .description {
       flex: 1 1 45%;
       background: rgba(30,30,30,0.95);
@@ -115,12 +129,25 @@
       font-size: 16px;
     }
 
+    /* ---------------- RESPONSIVE ---------------- */
     @media (max-width: 768px) {
       .apparel-item {
         flex-direction: column;
       }
       .apparel-item:nth-child(even) .image {
         order: 0;
+      }
+
+      .back-link {
+        margin-bottom: 20px;
+        display: inline-block;
+        color: #ccc;
+        font-size: 16px;
+        transition: 0.2s;
+      }
+
+      .back-link:hover {
+        color: #fff;
       }
     }
   </style>
@@ -141,19 +168,11 @@
   </div>
 
   <!-- BACK BUTTON -->
-<div style="max-width: 1200px; margin: 20px auto; padding: 0 20px;">
-  <a href="../../../design.html" style="
-    display: inline-block;
-    background: #cc4e1d;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: 0.3s;
-  ">← Back to Design</a>
-</div>
+  <div style="max-width: 1200px; margin: 20px auto; padding: 0 20px;">
+    <a href="../../../design.html" class="back-link">← Back to Design</a>
+  </div>
 
-
+  <!-- APPAREL CONTENT -->
   <div class="apparel-container">
 
     <!-- ITEM 1 -->
@@ -174,7 +193,7 @@
       </div>
       <div class="description">
         <h2>Merch Designer</h2>
-        <p>Designed the front logo and graphic for the OVRDRIVE team shirt. Bold, energetic, and instantly recognizable. Created the back graphic with team branding, maintaining balance and clarity for live performances.</p>
+        <p>Designed the front logo and graphic for the OVRDRIVE team shirt—bold, energetic, and instantly recognizable. Created the back graphic with clean branding optimized for live performances.</p>
       </div>
     </div>
 
@@ -189,12 +208,10 @@
       </div>
     </div>
 
-    <!-- ITEM 4 -->
-   
   </div>
 
   <script>
-    // Simple scroll animation for fade-in zig-zag
+    /* Scroll fade-in animation */
     const items = document.querySelectorAll('.apparel-item');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {

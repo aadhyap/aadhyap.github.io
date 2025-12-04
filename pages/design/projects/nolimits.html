@@ -63,25 +63,37 @@
     }
 
     /* ---------------- BACK BUTTON ---------------- */
-    .back-button {
-      display: inline-block;
-      background: #75FCC0;
-      color: #111;
-      padding: 10px 25px;
-      border-radius: 8px;
-      font-weight: 600;
-      margin: 40px 20px 20px 20px;
-      transition: 0.3s;
-    }
-    .back-button:hover {
-      background: #53e6b8;
-    }
+        .back-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        padding: 80px 0 20px 160px;   /* ⬅️ move it down */
+        }
+
+        .back-button {
+        display: inline-block;
+        background: #75FCC0;
+        color: #111;
+        padding: 12px 28px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 16px;
+        box-shadow: 0 4px 12px rgba(117, 252, 192, 0.25);
+        transition: 0.25s ease;
+        }
+
+        .back-button:hover {
+        background: #53e6b8;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(117, 252, 192, 0.35);
+        }
+
 
     /* ---------------- MAIN ---------------- */
     .main {
       max-width: 1200px;
       margin: 0 auto 100px;
-      padding: 0 20px;
+      padding: 200px 20px;
       display: flex;
       flex-direction: column;
       gap: 80px;
@@ -141,7 +153,7 @@
  
 
   <!-- BACK BUTTON -->
-   <a href="../../../design.html" class="back-link">&#8592; Back to Projects</a>
+   <a href="../../../design.html" class="back-wrapper">&#8592; Back to Projects</a>
 
   <!-- MAIN CONTENT -->
   <div class="main">
@@ -163,7 +175,7 @@
         <img src="../../../images/diagram2.png" alt="System Breakdown 2">
       </div>
       <div class="description">
-        <h2>Tracking Engine</h2>
+        <h2>Screen Backend Breakdwon</h2>
         <p>The core engine captures exercises, repetitions, and user metrics in real-time. This breakdown shows how data is processed and visualized to provide actionable insights for all fitness levels.</p>
       </div>
     </div>
@@ -171,18 +183,18 @@
     <!-- Block 3 -->
     <div class="zigzag-block">
       <div class="diagram-container">
-        <img src="../../../images/diagram3.png" alt="System Breakdown 3">
+        <img src="../../../images/appdi.png" alt="System Breakdown 3">
       </div>
       <div class="description">
         <h2>User Dashboard</h2>
-        <p>The dashboard presents an overview of daily workouts, progress, and personalized recommendations. The zig-zag layout keeps the flow dynamic while reading through each section.</p>
+        <p>The dashboard presents an overview of daily workouts, progress, and personalized recommendations. It helps the user organize their workouts</p>
       </div>
     </div>
 
     <!-- Block 4 -->
     <div class="zigzag-block">
       <div class="diagram-container">
-        <img src="../../../images/diagram4.png" alt="System Breakdown 4">
+        <img src="../../../images/cal.png" alt="System Breakdown 4">
       </div>
       <div class="description">
         <h2>Analytics</h2>
