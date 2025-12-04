@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overdrive - Project</title>
+  <style>
+    /* ---------------- GLOBAL ---------------- */
+    body {
+      margin: 0;
+      background: #000;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ---------------- NAVIGATION ---------------- */
+    .navbar {
+      width: 100%;
+      background: #111;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-content {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .navbar a {
+      color: #ccc;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: 0.2s;
+      font-size: 16px;
+    }
+
+    .navbar a:hover {
+      background: #333;
+      color: #fff;
+    }
+
+    .navbar a.active {
+      background: #fff;
+      color: #000;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .nav-content {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    /* ---------------- PROJECT CONTENT ---------------- */
+    .project-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .project-poster {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    }
+
+    .project-poster img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .project-description {
+      background: rgba(30, 30, 30, 0.95);
+      padding: 30px;
+      margin-top: -15px; /* overlay slightly on image */
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      backdrop-filter: blur(4px);
+    }
+
+    .project-description h1 {
+      margin-top: 0;
+      font-size: 36px;
+      color: #fff;
+    }
+
+    .project-description p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    /* optional: small back link */
+    .back-link {
+      margin-bottom: 20px;
+      display: inline-block;
+      color: #ccc;
+      font-size: 16px;
+      transition: 0.2s;
+    }
+
+    .back-link:hover {
+      color: #fff;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="nav-content">
+      <div style="font-size:18px; font-weight:bold;">Aadhya Puttur</div>
+      <div style="display:flex; gap:20px;">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="../../../design.html">Design</a>
+        <a href="../../../contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT CONTENT -->
+  <div class="project-container">
+
+    <a href="../../../design.html" class="back-link">&#8592; Back to Projects</a>
+
+    <!-- Poster -->
+    <div class="project-poster">
+      <img src="../pics/overdrive.png" alt="Overdrive Poster">
+    </div>
+
+    <!-- Description Box -->
+    <div class="project-description">
+      <h1>Overdrive</h1>
+      <p>
+        Multi-media brand designer for the Southern California Tricking Demo Team <strong>OVRDRIVE</strong>.  
+        I created the brand name, logo, and promotional posters for live performances, including an NBA halftime show and multiple Asian cultural events in Orange County.  
+        This project involved conceptualizing the visual identity, balancing bold colors and dynamic typography to match the energy and athleticism of the team.  
+        Every poster and graphic was designed to energize audiences and reflect the team's high-flying style.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
