@@ -1,0 +1,571 @@
+/* styles.css */
+
+* {
+  font-family: "Inter","Roboto", "Times New Roman", sans-serif;
+  color: white;
+  background-color: #1E1E1E;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  
+  
+
+} 
+
+
+
+
+
+
+.button:hover   {
+  color: #75FCC0;
+
+  
+  
+}
+.button:hover.vision-color  {
+  color:#E35D75;
+
+  
+  
+}
+
+.learnmore{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 0px 90px 0px;
+
+}
+
+
+
+
+
+
+.software_button{
+ 
+  background-color: rgba(117,252,192,.3);
+  border-radius: 10px;
+
+
+}
+
+
+.software_button:hover{
+  background-color: rgba(227,93,117,.3);
+  border-radius: 10px;
+
+
+}
+
+.icon-software:hover{
+  background-color: rgba(117,252,192,.3);
+  border-radius: 10px;
+
+
+}
+
+.icon-vision:hover{
+  background-color: rgba(227,93,117,.3);
+  border-radius: 10px;
+
+
+}
+
+.vision_button{
+  background-color: rgba(227,93,117,.3);
+  border-radius: 10px;
+
+
+}
+
+.vision_button:hover{
+  background-color: rgba(117,252,192,.3);
+  border-radius: 10px;
+
+
+}
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+.menu-container {
+  display: flex;
+  align-items: center;
+  padding: 20px 0px 0px 20px;
+}
+
+
+
+.logo{
+  height: auto;
+  width: 50px;
+  
+}
+
+.menu-container .logo{
+  height: auto;
+  width: 100px;
+  display: block;
+  margin-right: auto;
+}
+
+
+.menu-links{
+
+  display: flex;
+  margin-left: auto;
+  padding: 0px 0px 0px 0px;
+
+}
+
+.menu-links a {
+  font-family: "Inter","Roboto", sans-serif;
+  color: white;
+  padding:0px 100px 0px 0px;;
+}
+
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
+}
+
+.header {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;  
+}
+
+.title, .medium, .small {
+  font-family: 'Inter', "Times New Roman", sans-serif;
+  color: white;
+
+  
+}
+
+.title{
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.medium{
+  font-size: 40px;
+}
+
+
+.small{
+  font-size: 20px;
+}
+
+
+.software{
+  color: #75FCC0;
+
+}
+
+.vision{
+  color: #E35D75;
+
+}
+
+.intro{
+  display:flex;
+  flex-basis: 605px;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 90px;
+
+
+}
+
+.profile{
+  width: 500px; 
+  height: 500px;
+  border-radius: 50%; 
+  overflow: hidden;
+  position: relative;
+ 
+  
+
+}
+@media only screen and (max-width: 600px) {
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .current-project {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+.current-project{
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  align-items: center;
+  justify-content: center; /* This will center the items horizontally */
+  flex-wrap: wrap;
+  
+
+}
+
+
+.vertical-line {
+    width: 1px; /* Line width */
+    height: 400px; /* Line height */
+    background-color: #75FCC0;
+    margin-left: 50px;
+
+}
+
+
+.examples{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-around;
+  padding: 0px 0px 0px 0px;
+  margin-top: 50px;
+ 
+
+
+}
+
+.container_examples{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 0px 20px 0px 0px;
+  background-color: #D9D9D9;
+  
+
+
+
+}
+
+.demo{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  
+}
+.vent-titles{
+  width: 400px;
+  display:flex;
+  text-align: left;
+  margin-left: 90px;
+  margin-top: 20px;
+  background-color: transparent; 
+}
+
+.hvents{
+  width: 400px;
+  height: 150px;
+  font-weight: bold;
+  font-size: 40px;
+  color: black;
+  background-color: transparent; 
+
+}
+
+.demo-title{
+
+
+  font-weight: bold;
+  font-size: 40px;
+  color: black;
+  background-color: transparent; 
+
+}
+
+.vision-border{
+  border: 2px solid #E35D75;
+
+
+}
+
+.software-border{
+  border: 2px solid #75FCC0;
+
+
+}
+
+
+
+
+.profile img {
+  width: auto; 
+  height: 100%; 
+  position: absolute;
+  left: -40px;
+  filter: blur(0.5px);
+}
+
+img {
+  overflow-clip-margin: content-box ;
+}
+
+
+
+.bio{
+  width: 90%;
+}
+
+
+.icon{
+  height: auto;
+  width: 60px;
+
+}
+
+.icons{
+  display: flex;
+  text-align: center;
+  height: auto;
+  width: 20px;
+
+}
+
+.icons a{
+  padding:0px 15px 0px 0px;
+  
+
+}
+
+#Projects{
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  margin-top: 200px;
+}
+
+.project-section{
+  padding-left: 190px;
+  
+  
+
+}
+
+
+
+
+.project-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 15px;
+  row-gap: 15px;
+  padding: 16px;
+  padding-bottom: 200px;
+  
+
+
+  
+
+  
+}
+.item {
+
+  max-height: auto;
+  height: 220px;
+  flex-basis: 500px;
+  display: flex;
+
+  padding: 10px; 
+  border-radius: 10px;
+  color: #75FCC0;
+  border: 1px solid ;
+  filter: drop-shadow(-5px 3px  5px);
+  
+  
+}
+  
+  
+
+
+.project-container div img {
+  width: 140px;
+  height: auto;
+  padding:0px;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  height: 100px;
+
+ 
+ 
+}
+
+.project-display {
+  display: flex;
+  flex-direction: column;
+  min-width: 30%;
+  justify-content: space-between;
+  margin-right: 12px;
+  position: relative;
+  padding: 4px;
+  
+
+  
+
+}
+
+.project-description{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+.project-description h1{
+  font-size: 20px;
+}
+
+@media (max-width: 600px) {
+  /* Adjust font size for smaller screens */
+  .project-description h1 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  /* Adjust font size for smaller screens */
+  .project-description h1 {
+    font-size: 14px;
+  }
+}
+
+
+
+.project-description p{
+  font-size: 15px;
+}
+@media (max-width: 600px) {
+  .project-description p{
+    font-size: 14px;
+  }
+  
+}
+@media (max-width: 400px) {
+  .project-description p{
+    font-size: 10px;
+  }
+  
+}
+
+
+
+
+.project-title{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  
+}
+
+
+.arrow{
+  font-family: "system-ui",-apple-system,BlinkMacSystemFont,Arial;
+  margin-right: 10px;
+  color: #75FCC0;
+}
+
+
+
+
+
+.tools-used-container{
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  
+}
+
+.tools-used-container p{
+  background-color: rgba(117,252,192,.5);
+  border-radius: 10px;
+  padding: 3px;
+  border: 1px solid #75FCC0;
+  font-size: 15px;
+  color: #75FCC0;
+  
+}
+
+@media (max-width: 600px) {
+  .tools-used-container p{
+    font-size: 14px;
+  }
+  
+}
+@media (max-width: 400px) {
+  .tools-used-container p{
+    font-size: 10px;
+  }
+  
+}
+
+.tools-used-container.vision-color p{
+  color:#E35D75;
+  border: 1px solid #E35D75;
+  background-color: rgba(227,93,117,.5);
+}
+.vision-color{
+  color:#E35D75;
+
+
+}
+
+
+/* These are notes from odin project */
+.subsection.header {
+  color: red;
+}
+
+.subsection#preview {
+  color: blue;
+}
+
+.ancestor .contents {
+  /* some declarations */
+}
+
+/* rule 1 */
+.class.second-class {
+  font-size: 12px;
+}
+
+/* rule 2 */
+.class .second-class {
+  font-size: 24px;
+}
+
+/* rule 1 */
+.class.second-class {
+  font-size: 12px;
+}
+
+/* rule 2 */
+.class > .second-class {
+  font-size: 24px;
+}
+

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Character & Media Showcase | Aadhya</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #111;
+    color: #fff;
+  }
+  a { text-decoration: none; color: inherit; }
+
+/* ---------------- NAVIGATION ---------------- */
+    .navbar {
+      width: 100%;
+      background: #111;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-content {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .navbar a {
+      color: #ccc;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: 0.2s;
+      font-size: 16px;
+    }
+
+    .navbar a:hover {
+      background: #333;
+      color: #fff;
+    }
+
+    .navbar a.active {
+      background: #fff;
+      color: #000;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .nav-content {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+  /* BACK LINK */
+    .back-link {
+      margin-bottom: 90px;
+      margin-left: 170px;
+      margin-top: 60px;
+      display: inline-block;
+      color: #ccc;
+      font-size: 16px;
+      transition: 0.2s;
+    }
+
+    .back-link:hover {
+      color: #fff;
+    }
+
+/* ---------------- MAIN CONTENT ---------------- */
+  .main {
+    max-width: 1200px;
+    margin: 0 auto 120px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+  }
+
+  .zigzag-block {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s ease-out;
+  }
+
+  .zigzag-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .zigzag-block:nth-child(even) { flex-direction: row-reverse; }
+
+  .media-container {
+    flex: 1 1 500px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(117, 252, 192, 0.25);
+    transform: perspective(800px) rotateX(6deg);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .media-container:hover {
+    transform: perspective(800px) rotateX(0deg) translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(117, 252, 192, 0.45);
+  }
+
+  .media-container img,
+  .media-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+  }
+
+/* DESCRIPTION */
+  .description {
+    flex: 1 1 400px;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+    color: #ccc;
+    transform: translateX(-20px);
+    transition: transform 0.8s ease-out, opacity 0.8s;
+    opacity: 0;
+  }
+
+  .zigzag-block.visible .description {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .description h2 {
+    color: #75FCC0;
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+/* RESPONSIVE */
+  @media (max-width: 900px) {
+    .zigzag-block {
+      flex-direction: column !important;
+    }
+    .media-container,
+    .description {
+      flex: 1 1 100%;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+    .description { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="navbar">
+  <div class="nav-content">
+    <div style="font-size:18px; font-weight:bold;">Aadhya Puttur</div>
+    <div style="display:flex; gap:20px;">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="../../../design.html">Design</a>
+      <a href="../../../contact.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- BACK BUTTON -->
+<a href="../../../design.html" class="back-link">&#8592; Back to Projects</a>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- Block 1: Image -->
+  <div class="zigzag-block">
+    <div class="media-container">
+      <img src="../pics/game/enemy.png" alt="Character Image 1">
+    </div>
+    <div class="description">
+      <h2>Enemies</h2>
+      <p>Illustration for Original Characters</p>
+    </div>
+  </div>
+
+  <!-- Block 2: Video -->
+  <div class="zigzag-block">
+    <div class="media-container">
+      <video autoplay muted loop playsinline>
+        <source src="../vids/girlart.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="description">
+      <h2>Character creation</h2>
+      <p>Dynamic movement and pose study for bug character, optimized for games and story sequences.</p>
+    </div>
+  </div>
+
+  <!-- Block 3: Image -->
+  <div class="zigzag-block">
+    <div class="media-container">
+      <img src="../pics/game/shinohi.png" alt="Character Image 2">
+    </div>
+    <div class="description">
+      <h2>Indie game pixel characters</h2>
+      <p>Army of characters created, sticking with style.</p>
+    </div>
+  </div>
+
+  <!-- Block 4: Video -->
+  <div class="zigzag-block">
+    <div class="media-container">
+      <video autoplay muted loop playsinline>
+        <source src="../vids/fighter.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="description">
+      <h2>Fighter Character</h2>
+      <p>Martial arts character.</p>
+    </div>
+  </div>
+
+  <!-- Block 5: Image -->
+  <div class="zigzag-block">
+    <div class="media-container">
+      <img src="../pics/game/chibi.png" alt="Character Image 3">
+    </div>
+    <div class="description">
+      <h2>Dynamic movement</h2>
+      <p>Original character design showing costume, color palette, and personality traits.</p>
+    </div>
+  </div>
+
+  <!-- Block 6: Image -->
+  <div class="zigzag-block">
+    <div class="media-container">
+      <img src="../pics/game/girl.png" alt="Character Image 4">
+    </div>
+    <div class="description">
+      <h2>Character Design (Procreate)</h2>
+      <p>Character design includes clothing and apparel design. Studying many different types of Asian garments.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const blocks = document.querySelectorAll('.zigzag-block');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.25 });
+
+  blocks.forEach(block => observer.observe(block));
+</script>
+
+</body>
+</html>

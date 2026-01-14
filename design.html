@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aadhya Puttur Design</title>
+
+  <style>
+    /* ---------------- GLOBAL ---------------- */
+    body {
+      margin: 0;
+      background: #000;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ---------------- NAVIGATION ---------------- */
+    .navbar {
+      width: 100%;
+      background: #111;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-content {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .navbar a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: 0.2s;
+      white-space: nowrap;
+    }
+
+    .navbar a:hover {
+      background: #333;
+      color: #fff;
+    }
+
+    .navbar a.active {
+      background: #fff;
+      color: #000;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .nav-content {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    /* ---------------- PROJECT GRID ---------------- */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 40px auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* ---------------- PROJECT CARD ---------------- */
+    .project {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #cc4e1d;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 6px;
+    }
+
+    .project img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.3s;
+    }
+
+    /* ---------------- OVERLAY ---------------- */
+    .project .overlay {
+      position: absolute;
+      top: -60px;
+      left: 0;
+      width: 90%;
+      height: 100%;
+      color: #fff;
+      display: flex;
+      justify-content: center;   /* centers vertically */
+      align-items: center;        /* centers horizontally */
+      opacity: 0;
+      transition: opacity 0.3s;
+      padding: 40px;
+
+    }
+
+  .overlay-content {
+    text-align: left;           /* text left aligned */
+    width: fit-content;         /* keeps block tight */
+  }
+
+
+    .project-title {
+      font-size: 32px;
+
+    }
+    .project-desc {
+      font-size: 16px;
+
+    }
+    /* Hover behavior */
+    .project:hover img {
+      opacity: 0;
+    }
+    .project:hover .overlay {
+      opacity: 1;
+    }
+    .project-link {
+      text-decoration: none; /* remove underline */
+      color: inherit;        /* inherit color */
+      display: block;        /* make link behave like block */
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <div class="navbar">
+    <div class="nav-content">
+      <div style="color:#fff; font-size:18px; font-weight:bold;">Aadhya Puttur</div>
+
+      <div style="display:flex; gap:20px;">
+        <a href="./contact.html">Contact</a>
+        <a href="./design.html" class="active">Design</a>
+        <a href="./pages/tech.html">Tech</a>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <section style="padding: 60px 20px; text-align:center; max-width:900px; margin:auto;">
+    <h2 style="font-size:32px; color:#fff; font-weight:700; margin-bottom:10px;">
+      I design visuals, characters, and interactive experiences — blending branding, motion, and storytelling.
+    </h2>
+    <p style="font-size:20px; color:#fff; margin-top:0;">And I can do it for you too.</p>
+    <div style="font-size:40px; margin-top:20px;">&#8595;</div>
+  </section>
+
+  <!-- PROJECTS GRID -->
+<section class="projects-grid">
+
+  <!-- Project 1 -->
+  <a href="./pages/design/projects/ovrdrive.html" class="project-link">
+    <div class="project">
+      <img src="./pages/design/pics/overdrive.png" alt="">
+      <div class="overlay">
+        <div class="overlay-content">
+          <h3 class="project-title">Overdrive</h3>
+          <p class="project-desc">Multi-media brand designer for the Southern California Tricking Demo Team OVRDRIVE. Created brand name, logo, and posters for live performances including NBA halftime and OC events.</p>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Project 2 -->
+  <a href="./pages/design/projects/apparel.html" class="project-link">
+    <div class="project">
+      <img src="./pages/design/pics/shirt.png" alt="">
+      <div class="overlay">
+        <div class="overlay-content">
+          <h3 class="project-title">Shirt Design</h3>
+          <p class="project-desc">Apparel and merch designer for the Southern California Tricking Demo Team OVRDRIVE.</p>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Project 3 -->
+  <a href="https://mysaute.com/" class="project-link">
+    <div class="project">
+      <img src="./pages/design/pics/saute.png" alt="">
+      <div class="overlay">
+        <div class="overlay-content">
+          <h3 class="project-title">Sauté</h3>
+          <p class="project-desc">Product and website designer for a lifestyle brand and restaurant built on bold energy and health-forward food.</p>
+        </div>
+      </div>
+    </div>
+  </a>
+
+
+  <!-- Project 4 -->
+  <a href="./pages/design/projects/voiceapp.html" class="project-link">
+    <div class="project">
+      <img src="./pages/design/pics/voiceapp.png" alt="">
+      <div class="overlay">
+        <div class="overlay-content">
+          <h3 class="project-title">Voice App</h3>
+          <p class="project-desc">A private, minimalist voice journal app designed for raw moments when you’re overwhelmed. Tap, record, and let it out.</p>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Project 5 -->
+  <a href="./pages/design/projects/character.html" class="project-link">
+    <div class="project">
+      <img src="./pages/design/pics/character.png" alt="">
+      <div class="overlay">
+        <div class="overlay-content">
+          <h3 class="project-title">Character Design</h3>
+          <p class="project-desc">Storyboarded and created characters for various games and original characters using Procreate. Illustration + animation style.</p>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <a href="./pages/design/projects/nolimits.html" class="project-link">
+    <div class="project">
+      <img src="./pages/design/pics/moveapp.png" alt="">
+      <div class="overlay">
+        <div class="overlay-content">
+          <h3 class="project-title">Move App</h3>
+          <p class="project-desc">Designed a fitness and activity tracker app, No Limits, for tracking bodyweight and calisthenics exercises to build strength and long-term performance.</p>
+        </div>
+      </div>
+    </div>
+  </a>
+
+</section>
+
+
+
+</body>
+</html>

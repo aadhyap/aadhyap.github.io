@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aadhya Puttur</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    /* ---------------- NAVBAR ---------------- */
+    .navbar {
+      width: 100%;
+      background: #111;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-content {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .navbar a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: 0.2s;
+      white-space: nowrap;
+    }
+
+    .navbar a:hover {
+      background: #333;
+      color: #fff;
+    }
+
+    .navbar a.active {
+      background: #fff;
+      color: #000;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .nav-content {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    /* ---------------- CONTAINER ---------------- */
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 30px;
+    }
+
+    /* ---------------- HEADER ---------------- */
+    .header-container {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-bottom: 60px;
+    }
+
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 100px;
+      object-fit: cover;
+      box-shadow: 0 0 25px rgba(117,252,192,0.25);
+    }
+
+    .title {
+      font-size: 40px;
+      font-weight: 700;
+      margin: 0;
+      color: #75FCC0;
+    }
+
+    .medium {
+      font-size: 20px;
+      margin: 6px 0;
+    }
+
+    .small {
+      font-size: 15px;
+      color: #ccc;
+    }
+
+    /* ---------------- ICONS ---------------- */
+    .icons {
+      display: flex;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .icons svg {
+      width: 30px;
+      height: 30px;
+      fill: #75FCC0;
+      transition: 0.2s;
+    }
+
+    .icons svg:hover {
+      opacity: 0.7;
+    }
+
+    /* ---------------- PROJECT CARDS ---------------- */
+    .projects {
+      margin-top: 40px;
+    }
+
+    .projects h1 {
+      font-size: 28px;
+      margin-bottom: 25px;
+    }
+
+    .project-card {
+      background: #1a1a1a;
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 0 25px rgba(117,252,192,0.12);
+      transition: 0.3s ease;
+      text-decoration: none;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 380px;
+      margin: auto;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 35px rgba(117,252,192,0.25);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 16px;
+      height: 260px;
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(0,255,200,0.15);
+    }
+
+    .project-card h2 {
+      font-size: 22px;
+      margin-top: 18px;
+      margin-bottom: 8px;
+      color: #75FCC0;
+      text-align: center;
+    }
+
+    .project-card p {
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.4;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .tools span {
+      background: rgba(255,255,255,0.1);
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    /* ---------------- MOBILE ---------------- */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ---------------- NAVBAR ---------------- -->
+  <div class="navbar">
+    <div class="nav-content">
+      <div style="color:#fff; font-size:18px; font-weight:bold;">Aadhya Puttur</div>
+      <div style="display:flex; gap:20px;">
+        <a href="../../index.html">Home</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------------- MAIN CONTENT ---------------- -->
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="header-container">
+      <div class="profile">
+        <img src="../images/propix.jpg">
+      </div>
+
+      <div class="intro">
+        <p class="title">Hi I'm Aadhya</p>
+        <p class="medium">I am a <span class="software">creator</span></p>
+        <p class="small">Strong technical background with product ownership experience.</p>
+        <p class="small">Built software at Anduril, Skydio, MIT Lincoln Labs, and Raytheon.</p>
+
+        <div class="icons">
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com/in/aadhyaputtur" target="_blank">
+            <svg viewBox="0 0 24 24">
+              <path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.5 8h4v14h-4V8zm7.98 0h3.83v1.94h.05c.53-.98 1.83-2.02 3.77-2.02 4.03 0 4.77 2.66 4.77 6.1V22h-4v-7.1c0-1.7-.03-3.88-2.36-3.88-2.36 0-2.72 1.84-2.72 3.75V22h-4V8z"/>
+            </svg>
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/aadhyap" target="_blank">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.43 7.86 10.96.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.39-3.87-1.39-.53-1.34-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.17.08 1.79 1.2 1.79 1.2 1.04 1.79 2.73 1.27 3.4.97.1-.76.4-1.27.72-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.52.1-3.16 0 0 .97-.31 3.18 1.19a11 11 0 0 1 5.8 0c2.2-1.5 3.18-1.19 3.18-1.19.62 1.64.22 2.86.1 3.16.75.81 1.2 1.84 1.2 3.1 0 4.43-2.69 5.4-5.25 5.68.41.35.77 1.05.77 2.13v3.16c0 .31.2.67.8.56A10.51 10.51 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT SECTION -->
+    <div class="projects">
+      <h1>Projects & Apps</h1>
+
+      <div class="project-grid">
+
+        <!-- APPS -->
+        <a class="project-card" href="https://mysaute.com" target="_blank">
+          <img src="../images/mysaute.png" alt="Sauté App">
+          <h2>Sauté</h2>
+          <p>Lifestyle brand and restaurant business. Founded and designed brand identity, business site, and launch plan.</p>
+          <div class="tools"><span>Branding</span><span>Web Design</span></div>
+        </a>
+
+        <a class="project-card" href="./nolimits.html" target="_blank">
+          <img src="../images/appdi.png" alt="No Limits App">
+          <h2>No Limits</h2>
+          <p>Track bodyweight and calisthenics exercises for any sport—designed to build strength, control, and performance.</p>
+          <div class="tools"><span>iOS</span><span>Health</span><span>Fitness</span></div>
+        </a>
+
+        <a class="project-card" href="./vent.html" target="_blank">
+          <img src="../images/iphones.png" alt="Vent App">
+          <h2>Vent</h2>
+          <p>Private, minimalist voice journal for when you're overwhelmed. Tap, record, and let it out.</p>
+          <div class="tools"><span>iOS</span><span>Journal</span></div>
+        </a>
+
+        <!-- TECH PROJECTS -->
+        <a class="project-card" href="https://users.wpi.edu/~mmaghelih/BiQu.html" target="_blank">
+          <img src="../images/quadrobot.png">
+          <h2>Bimodal Quadruped Robot</h2>
+          <p>Developed Solo 12 robot with hybrid quadruped–biped locomotion & vision-based person tracking.</p>
+          <div class="tools"><span>C++</span><span>Linux</span></div>
+        </a>
+
+        <a class="project-card" href="https://github.com/CS3733-D22-Team-A/AgileAngels" target="_blank">
+          <img src="../images/hospital.png">
+          <h2>Mass General Brigham</h2>
+          <p>Led full-stack Java hospital system with backend architecture + UI design for a 10-person Agile team.</p>
+          <div class="tools"><span>Java</span><span>JavaFX</span><span>Apache</span><span>Agile</span><span>Figma</span></div>
+        </a>
+
+        <a class="project-card" href="https://prolearn.mit.edu/build-small-radar-system" target="_blank">
+          <img src="../images/radar.png">
+          <h2>Coffee Can Radar</h2>
+          <p>Arduino MKRZero-based radar reducing communications latency by 20ms.</p>
+          <div class="tools"><span>MATLAB</span><span>Arduino</span><span>Radar</span></div>
+        </a>
+
+        <a class="project-card" href="https://www.youtube.com/watch?v=yBG85EsSapw" target="_blank">
+          <img src="../images/mask.png">
+          <h2>COVID Innovation Challenge (2nd Place)</h2>
+          <p>Built PPE prototype + Android app in 3 days for WPI COVID Challenge.</p>
+          <div class="tools"><span>Android</span><span>Java</span><span>Maps API</span></div>
+        </a>
+
+        <a class="project-card" href="https://github.com/aadhyap/AutoCalib/blob/main/AutoCalib.pdf" target="_blank">
+          <img src="../images/autocalib.png">
+          <h2>Camera Calibration</h2>
+          <p>Computed intrinsic/extrinsic parameters & reduced reprojection error by 11%.</p>
+          <div class="tools"><span>Python</span><span>SciPy</span><span>Epipolar</span></div>
+        </a>
+
+        <a class="project-card" href="https://github.com/aadhyap/FaceSwap/blob/main/report.pdf" target="_blank">
+          <img src="../images/faceswap.png" alt="Face Swap">
+          <h2>Face Swap</h2>
+          <p>Real-time face swap using triangulation and thin-plate spline warping.</p>
+          <div class="tools"><span>Python</span><span>OpenCV</span><span>TPS</span></div>
+        </a>
+
+        <a class="project-card" href="https://github.com/aadhyap/SfM" target="_blank">
+          <img src="../images/sfm.png" alt="Structure from Motion">
+          <h2>Structure from Motion & NeRF</h2>
+          <p>Recovered camera poses and generated neural radiance fields for 3D reconstruction.</p>
+          <div class="tools"><span>Python</span><span>PyTorch</span><span>NeRF</span></div>
+        </a>
+
+        <a class="project-card" href="https://github.com/aadhyap/Image_Filters" target="_blank">
+          <img src="../images/butterfly.png" alt="Boundary Detection">
+          <h2>Boundary Detection</h2>
+          <p>Built image pipeline using texton/brightness/color maps + neural network for edge analysis.</p>
+          <div class="tools"><span>Python</span><span>PyTorch</span><span>Gaussian</span></div>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

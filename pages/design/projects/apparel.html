@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OVRDRIVE Apparel & Merch</title>
+  <style>
+    /* ---------------- GLOBAL ---------------- */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ---------------- NAVBAR ---------------- */
+    .navbar {
+      width: 100%;
+      background: #111;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-content {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .navbar a {
+      color: #ccc;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: 0.2s;
+      font-size: 16px;
+    }
+
+    .navbar a:hover {
+      background: #333;
+      color: #fff;
+    }
+
+    .navbar a.active {
+      background: #fff;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* ---------------- ZIG-ZAG GRID ---------------- */
+    .apparel-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .apparel-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    .apparel-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .apparel-item:nth-child(even) .image {
+      order: 2; /* zig-zag layout */
+    }
+
+    .apparel-item .image {
+      flex: 1 1 45%;
+      perspective: 1000px;
+    }
+
+    /* ---------------- INTERACTIVE IMAGE EFFECTS ---------------- */
+    .apparel-item .image img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+      transition: 
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        filter 0.35s ease;
+      transform-style: preserve-3d;
+    }
+
+    .apparel-item .image img:hover {
+      transform: scale(1.05) rotateX(6deg) rotateY(-6deg);
+      box-shadow: 0 12px 35px rgba(117, 252, 192, 0.35);
+      filter: brightness(1.15);
+    }
+
+    /* ---------------- DESCRIPTION ---------------- */
+    .apparel-item .description {
+      flex: 1 1 45%;
+      background: rgba(30,30,30,0.95);
+      padding: 20px;
+      border-radius: 12px;
+      line-height: 1.5;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .apparel-item .description h2 {
+      margin-top: 0;
+      font-size: 28px;
+      color: #fff;
+    }
+
+    .apparel-item .description p {
+      color: #ddd;
+      font-size: 16px;
+    }
+
+    /* ---------------- RESPONSIVE ---------------- */
+    @media (max-width: 768px) {
+      .apparel-item {
+        flex-direction: column;
+      }
+      .apparel-item:nth-child(even) .image {
+        order: 0;
+      }
+
+      .back-link {
+        margin-bottom: 20px;
+        display: inline-block;
+        color: #ccc;
+        font-size: 16px;
+        transition: 0.2s;
+      }
+
+      .back-link:hover {
+        color: #fff;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="nav-content">
+      <div style="font-size:18px; font-weight:bold;">Aadhya Puttur</div>
+      <div style="display:flex; gap:20px;">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="../../../design.html">Design</a>
+        <a href="../../../contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BACK BUTTON -->
+  <div style="max-width: 1200px; margin: 20px auto; padding: 0 20px;">
+    <a href="../../../design.html" class="back-link">← Back to Design</a>
+  </div>
+
+  <!-- APPAREL CONTENT -->
+  <div class="apparel-container">
+
+    <!-- ITEM 1 -->
+    <div class="apparel-item">
+      <div class="image">
+        <img src="../pics/shirt1.png" alt="Shirt Front">
+      </div>
+      <div class="description">
+        <h2>OVRDRIVE</h2>
+        <p>A high-energy tricking team from Southern California. I designed the team’s name, logo, and full visual identity to capture the intensity, acrobatics, and unstoppable drive of our athletes.</p>
+      </div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="apparel-item">
+      <div class="image">
+        <img src="../pics/shirt2.png" alt="Shirt Back">
+      </div>
+      <div class="description">
+        <h2>Merch Designer</h2>
+        <p>Designed the front logo and graphic for the OVRDRIVE team shirt—bold, energetic, and instantly recognizable. Created the back graphic with clean branding optimized for live performances.</p>
+      </div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="apparel-item">
+      <div class="image">
+        <img src="../pics/logo.png" alt="Team Logo">
+      </div>
+      <div class="description">
+        <h2>Team Logo</h2>
+        <p>Designed the OVRDRIVE logo with custom typography and dynamic, cyberpunk-inspired shapes to convey motion, energy, and athleticism.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    /* Scroll fade-in animation */
+    const items = document.querySelectorAll('.apparel-item');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    items.forEach(item => observer.observe(item));
+  </script>
+
+</body>
+</html>

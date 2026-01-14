@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aadhya Puttur</title>
+  <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="shortcut icon" href = "../favicon.ico" type="image/x-icon"/>
+</head>
+
+
+<body>
+
+
+<div class = "container">
+  <nav class='menu-container'>
+      <img src="../images/logo.png" alt="logo" class = "logo" >
+      <div class="menu-links small">
+        <a class="button vision-color" href="#Projects">Projects</a>
+        <a class="button vision-color" href="./images/aadhyaresume.pdf">Resume</a>
+        <a class="button vision-color" href="../index.html">Engineer</a>
+    </div>
+  </nav>
+
+  <div class="header-container">
+
+    <div class="profile vision-border"><img src="../images/propix.jpg" alt="profile picture"> </div>
+
+    <div class="intro">
+      <p class="title">Hi I'm Aadhya</p>
+      <p class="medium">I am a <a href="../index.html" class="vision vision_button">computer vision engineer</a></p>
+      <p class="small">I like understanding how technology sees and <span class="vision">interprets visual input</span></p>
+      <p class="small"> I&#39ve replicated popular computer vision methods through my<span class="vision"> graduate course</span></p>
+
+      <div class="icons"><a href="https://linkedin.com/in/aadhyaputtur/"><img src="../images/linkedinpink.png" alt="LinkedIn" class="icon icon-vision" ></a>
+        <a href="https://github.com/aadhyap"><img src="../images/githubpink.png" alt="git" class="icon icon-vision"></a> </div>
+    </div>
+
+
+
+  </div>
+
+
+  <div id = "Projects">
+
+    <div class="project-section">
+      <h1 class="medium">Projects</h1>
+    </div>
+    <div class="project-container">
+      <a href="https://github.com/aadhyap/AutoCalib/blob/main/AutoCalib.pdf" target="_blank" class="item vision-color">  
+        <div class="project-display">
+          <img src="../images/autocalib.png" alt="auto calibration" >
+        </div>
+        <div class = "project-description">
+          <div class="project-title">
+            <h1>Camera Calibration</h1>
+            <span class="arrow vision-color">↗</span>
+          </div>
+          <p>I calculated the camera matrix parameters through utilizing different perspectives of images of checkerboards to obtain extrinsic parameters to calculate intrinsic parameters. I optimized camera parameters by reducing re-projection error by 11%</p>
+          <div class="tools-used-container vision-color">
+            <p>SciPy</p><p>Python</p><p>epipolar</p><p>numpy</p>
+          </div>
+        </div> 
+      </a>
+      <a href="https://github.com/aadhyap/FaceSwap/blob/main/report.pdf"  target="_blank" class="item vision-color">  
+        <div class="project-display">
+          <img src="../images/faceswap.png" alt="Face Swap Paper" >
+        </div>
+        <div class = "project-description">
+          <div class="project-title">
+            <h1>Face Swap</h1>
+            <span class="arrow vision-color">↗</span>
+          </div>
+          <p>Successfully created Face Swap in real time through the utilizing state of the art face-warping methods such as Triangulation and Thin Plate Spline</p>
+          <div class="tools-used-container vision-color">
+            <p>Python</p><p>Triangulation</p><p>opencv</p>
+          </div>
+        </div> 
+      </a>
+      <a href="https://github.com/aadhyap/SfM"  target="_blank" class="item vision-color">  
+        <div class="project-display">
+          <img src="../images/sfm.png" alt="structure from motion" >
+        </div>
+        <div class = "project-description">
+          <div class="project-title">
+            <h1>Structure from Motion and NeRF</h1>
+            <span class="arrow vision-color">↗</span>
+          </div>
+          <p>I used the classical Structure From Motion technique to find poses of different views of a camera. I constructed scenes through volumetric representation using images from different angles by implementing NeRF.</p>
+          <div class="tools-used-container vision-color">
+            <p>Pytorch</p><p>Python</p><p>Neural Network</p>
+          </div>
+        </div> 
+      </a>
+      <a href="https://github.com/aadhyap/Image_Filters"  target="_blank" class="item vision-color">  
+        <div class="project-display">
+          <img src="../images/butterfly.png" alt="detecting intensity changes in butterfly" >
+        </div>
+        <div class = "project-description">
+          <div class="project-title">
+            <h1>Boundary Detection</h1>
+            <span class="arrow vision-color">↗</span>
+          </div>
+          <p> I Implemented PB boundary detection algorithm by creating image processing tools: texton, color, and brightness map. I trained and tested a Neural Network in Pytorch to compare sobel and canny edge detection algorithm.
+          </p>
+          <div class="tools-used-container vision-color">
+            <p>Pytorch</p><p>Python</p><p>Neural Network</p><p>Image Processing</p><p>Gaussian</p>
+          </div>
+        </div> 
+      </a>
+
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>

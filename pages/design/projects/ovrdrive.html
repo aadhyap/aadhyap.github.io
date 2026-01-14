@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Overdrive – Project</title>
+
+  <style>
+    /* ---------- GLOBAL ---------- */
+    body {
+      margin: 0;
+      background: #000;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ---------- NAVBAR ---------- */
+    .navbar {
+      background: #111;
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .nav-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #ccc;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      background: #333;
+      color: #fff;
+    }
+
+    /* ---------- PAGE ---------- */
+    .project-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+      color: #bbb;
+    }
+
+    .back-link:hover {
+      color: #fff;
+    }
+
+    /* ---------- DESCRIPTION ---------- */
+    .project-description {
+      background: #1a1a1a;
+      padding: 32px;
+      border-radius: 14px;
+      text-align: center;
+      margin-bottom: 50px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    }
+
+    .project-description h1 {
+      font-size: 36px;
+      margin-top: 0;
+    }
+
+    .project-description p {
+      font-size: 18px;
+      color: #ddd;
+    }
+
+    /* ---------- VIDEO LINK CARDS ---------- */
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+
+    .video-card {
+      position: relative;
+      height: 0;
+      padding-bottom: 56.25%;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #111, #222);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: scale(1.03);
+    }
+
+    .video-card a {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .play-icon {
+      font-size: 56px;
+      margin-bottom: 12px;
+      opacity: 0.9;
+    }
+
+    .video-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .video-subtitle {
+      font-size: 14px;
+      color: #ccc;
+      margin-top: 6px;
+    }
+
+    /* ---------- POSTERS ---------- */
+    .posters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .posters-grid img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .posters-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    .caption {
+      text-align: center;
+      font-size: 15px;
+      color: #aaa;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .project-description h1 {
+        font-size: 28px;
+      }
+      .project-description p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="nav-content">
+      <div style="font-weight:bold;">Aadhya Puttur</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="../../../design.html">Design</a>
+        <a href="../../../contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="project-container">
+
+    <a href="../../../design.html" class="back-link">← Back to Projects</a>
+
+    <!-- DESCRIPTION -->
+    <div class="project-description">
+      <h1>Overdrive</h1>
+      <p>
+        Multi-media brand designer for the Southern California Tricking Demo Team
+        <strong>OVRDRIVE</strong>. I created the brand name, logo, posters, and
+        choreography visuals for live performances including an NBA halftime show
+        and cultural events across Orange County.
+      </p>
+    </div>
+
+    <!-- VIDEO LINKS -->
+    <div class="videos-grid">
+
+      <div class="video-card">
+        <a href="https://drive.google.com/file/d/1IM7pp6B6kEYPrff34X457ufbpUeJGoSJ/view?usp=sharing" target="_blank">
+          <div class="play-icon">▶</div>
+          <div class="video-title">LA Clippers Pregame Performance</div>
+          <div class="video-subtitle">Live demo – opens in new tab</div>
+        </a>
+      </div>
+
+      <div class="video-card">
+        <a href="https://drive.google.com/file/d/1pVvAWjhI5sl-ns4t9EkDWdMQ0-UGA-53/view?usp=sharing" target="_blank">
+          <div class="play-icon">▶</div>
+          <div class="video-title">Choreography Formations Animation</div>
+          <div class="video-subtitle">Planning & movement design</div>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- POSTERS -->
+    <div class="posters-grid">
+      <img src="../pics/poster2.png" alt="Overdrive Poster 2">
+      <img src="../pics/overdrive.png" alt="Overdrive Poster 1">
+    </div>
+
+    <div class="caption">
+      Posters designed using Procreate, Photoshop, and Canva
+    </div>
+
+  </div>
+
+</body>
+</html>

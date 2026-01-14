@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aadhya Puttur - App Examples</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ---------------- GLOBAL ---------------- */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(120deg, #111, #222);
+      color: #fff;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ---------------- NAVIGATION ---------------- */
+    /* ---------------- NAVIGATION ---------------- */
+    .navbar {
+      width: 100%;
+      background: #111;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-content {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .navbar a {
+      color: #ccc;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: 0.2s;
+      font-size: 16px;
+    }
+
+    .navbar a:hover {
+      background: #333;
+      color: #fff;
+    }
+
+    .navbar a.active {
+      background: #fff;
+      color: #000;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .nav-content {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    /* ---------------- BACK BUTTON ---------------- */
+    .back-button {
+      display: inline-block;
+      background: #cc4e1d;
+      color: #fff;
+      padding: 10px 25px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin: 40px 20px 20px 20px;
+      transition: 0.3s;
+    }
+    .back-button:hover {
+      background: #e65c3b;
+    }
+
+    /* ---------------- EXAMPLES GRID ---------------- */
+    .examples {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .container_examples {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .container_examples:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+    }
+    .vent-titles {
+      padding: 20px;
+      font-weight: 600;
+      font-size: 18px;
+      text-align: center;
+      background: rgba(0,0,0,0.4);
+    }
+    .container_examples img {
+      width: 100%;
+      display: block;
+      border-radius: 0 0 20px 20px;
+    }
+
+    /* ---------------- DEMO SECTION ---------------- */
+    .demo {
+      text-align: center;
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: 0 auto 100px;
+    }
+    .demo-title {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+    .demo video {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      margin-bottom: 30px;
+    }
+    .demo p {
+      font-size: 18px;
+      color: #ccc;
+    }
+
+    /* ---------------- RESPONSIVE ---------------- */
+    @media (max-width: 600px) {
+      .menu-links {
+        display: none;
+      }
+      .back-button {
+        margin: 20px;
+      }
+    }
+
+    .back-link {
+      margin-bottom: 20px;
+      display: inline-block;
+      color: #ccc;
+      font-size: 16px;
+      transition: 0.2s;
+      margin-top: 20px;
+      margin-left: 180px;
+    }
+
+    .back-link:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <div class="navbar">
+    <div class="nav-content">
+      <div style="font-size:18px; font-weight:bold;">Aadhya Puttur</div>
+      <div style="display:flex; gap:20px;">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="../../../design.html">Design</a>
+        <a href="../../../contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BACK BUTTON -->
+  <a href="../../../design.html" class="back-link">← Back to Design</a>
+
+  <!-- EXAMPLES GRID -->
+  <div class="examples">
+    <div class="container_examples">
+      <div class="vent-titles">Your Friends' Updates, Your Personal Playlist!</div>
+      <img src="../../../images/playlist.png" alt="playlist">
+    </div>
+
+    <div class="container_examples">
+      <div class="vent-titles">Tune into Your Friends' Updates</div>
+      <img src="../../../images/playing.png" alt="playing">
+    </div>
+  </div>
+
+  <!-- DEMO SECTION -->
+  <div class="demo">
+    <p class="demo-title">Demo</p>
+    <video controls>
+      <source src="../../../images/demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+  </div>
+</body>
+</html>

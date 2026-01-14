@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>No Limits | Aadhya Puttur</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* ---------------- GLOBAL ---------------- */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #111;
+      color: #fff;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ---------------- NAV ---------------- */
+    .navbar {
+      width: 100%;
+      background: #111;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-content {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .navbar a {
+      color: #ccc;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: 0.2s;
+      font-size: 16px;
+    }
+
+    .navbar a:hover {
+      background: #333;
+      color: #fff;
+    }
+
+    .navbar a.active {
+      background: #fff;
+      color: #000;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .nav-content {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    /* ---------------- BACK BUTTON ---------------- */
+        .back-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        padding: 80px 0 20px 160px;   /* ⬅️ move it down */
+        }
+
+        .back-button {
+        display: inline-block;
+        background: #75FCC0;
+        color: #111;
+        padding: 12px 28px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 16px;
+        box-shadow: 0 4px 12px rgba(117, 252, 192, 0.25);
+        transition: 0.25s ease;
+        }
+
+        .back-button:hover {
+        background: #53e6b8;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(117, 252, 192, 0.35);
+        }
+
+
+    /* ---------------- MAIN ---------------- */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto 100px;
+      padding: 200px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+    }
+    .zigzag-block {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .zigzag-block:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .diagram-container {
+      flex: 1 1 500px;
+    }
+    .diagram-container img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(117, 252, 192, 0.25);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .diagram-container img:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(117, 252, 192, 0.35);
+    }
+    .description {
+      flex: 1 1 400px;
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: left;
+      color: #ccc;
+    }
+    .description h2 {
+      color: #75FCC0;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    /* ---------------- RESPONSIVE ---------------- */
+    @media (max-width: 900px) {
+      .zigzag-block {
+        flex-direction: column !important;
+      }
+      .diagram-container, .description {
+        flex: 1 1 100%;
+      }
+      .description {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+ 
+
+  <!-- BACK BUTTON -->
+   <a href="../../../design.html" class="back-wrapper">&#8592; Back to Projects</a>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+    
+    <!-- Block 1 -->
+    <div class="zigzag-block">
+      <div class="diagram-container">
+        <img src="../../../images/diagram1.png" alt="System Breakdown 1">
+      </div>
+      <div class="description">
+        <h2>Overview</h2>
+        <p>No Limits is a fitness and activity tracker designed to improve bodyweight and calisthenics performance. This diagram highlights the main system architecture and the flow of user interactions.</p>
+      </div>
+    </div>
+
+    <!-- Block 2 -->
+    <div class="zigzag-block">
+      <div class="diagram-container">
+        <img src="../../../images/diagram2.png" alt="System Breakdown 2">
+      </div>
+      <div class="description">
+        <h2>Screen Backend Breakdwon</h2>
+        <p>The core engine captures exercises, repetitions, and user metrics in real-time. This breakdown shows how data is processed and visualized to provide actionable insights for all fitness levels.</p>
+      </div>
+    </div>
+
+    <!-- Block 3 -->
+    <div class="zigzag-block">
+      <div class="diagram-container">
+        <img src="../../../images/appdi.png" alt="System Breakdown 3">
+      </div>
+      <div class="description">
+        <h2>User Dashboard</h2>
+        <p>The dashboard presents an overview of daily workouts, progress, and personalized recommendations. It helps the user organize their workouts</p>
+      </div>
+    </div>
+
+    <!-- Block 4 -->
+    <div class="zigzag-block">
+      <div class="diagram-container">
+        <img src="../../../images/cal.png" alt="System Breakdown 4">
+      </div>
+      <div class="description">
+        <h2>Analytics</h2>
+        <p>Data analytics engine generates performance trends and visual insights. Users can track progress over time, see improvement areas, and optimize their workouts efficiently.</p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
