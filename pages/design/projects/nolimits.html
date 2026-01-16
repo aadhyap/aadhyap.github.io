@@ -3,206 +3,375 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>No Limits | Aadhya Puttur</title>
+  <title>No Limits | Aadhya</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+
   <style>
-    /* ---------------- GLOBAL ---------------- */
+    :root{
+      --bg:#0b0b0c;
+      --panel: rgba(255,255,255,0.06);
+      --panel2: rgba(255,255,255,0.04);
+      --text:#ffffff;
+      --muted: rgba(255,255,255,0.72);
+      --muted2: rgba(255,255,255,0.55);
+      --accent:#75FCC0;
+      --border: rgba(255,255,255,0.10);
+      --shadow: 0 12px 40px rgba(0,0,0,0.55);
+      --radius: 18px;
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #111;
-      color: #fff;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
+      background: radial-gradient(1200px 600px at 40% -10%, rgba(117,252,192,0.20), transparent 60%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(117,252,192,0.10), transparent 55%),
+                  var(--bg);
+      color: var(--text);
     }
 
-    /* ---------------- NAV ---------------- */
-    .navbar {
-      width: 100%;
-      background: #111;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: center;
+    a { color: inherit; text-decoration: none; }
+
+    /* Layout */
+    .page {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 32px;
+      max-width: calc(var(--max) + 220px);
+      margin: 0 auto;
+      padding: 28px 22px 60px;
     }
 
-    .nav-content {
-      width: 100%;
-      max-width: 1200px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
+    /* Sidebar */
+    .sidebar {
+      position: sticky;
+      top: 18px;
+      align-self: start;
+      height: fit-content;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--panel), transparent);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
     }
 
-    .navbar a {
-      color: #ccc;
-      padding: 6px 10px;
-      border-radius: 6px;
-      transition: 0.2s;
-      font-size: 16px;
+    .sidebar .brand {
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      margin-bottom: 14px;
     }
 
-    .navbar a:hover {
-      background: #333;
-      color: #fff;
-    }
-
-    .navbar a.active {
-      background: #fff;
-      color: #000;
-      font-weight: bold;
-    }
-
-    @media (max-width: 600px) {
-      .nav-content {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
-
-    /* ---------------- BACK BUTTON ---------------- */
-        .back-wrapper {
-        width: 100%;
-        display: flex;
-        justify-content: flex-start;
-        padding: 80px 0 20px 160px;   /* ⬅️ move it down */
-        }
-
-        .back-button {
-        display: inline-block;
-        background: #75FCC0;
-        color: #111;
-        padding: 12px 28px;
-        border-radius: 10px;
-        font-weight: 600;
-        font-size: 16px;
-        box-shadow: 0 4px 12px rgba(117, 252, 192, 0.25);
-        transition: 0.25s ease;
-        }
-
-        .back-button:hover {
-        background: #53e6b8;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(117, 252, 192, 0.35);
-        }
-
-
-    /* ---------------- MAIN ---------------- */
-    .main {
-      max-width: 1200px;
-      margin: 0 auto 100px;
-      padding: 200px 20px;
+    .sidebar nav {
       display: flex;
       flex-direction: column;
-      gap: 80px;
-    }
-    .zigzag-block {
-      display: flex;
-      gap: 40px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .zigzag-block:nth-child(even) {
-      flex-direction: row-reverse;
-    }
-    .diagram-container {
-      flex: 1 1 500px;
-    }
-    .diagram-container img {
-      width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(117, 252, 192, 0.25);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .diagram-container img:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 35px rgba(117, 252, 192, 0.35);
-    }
-    .description {
-      flex: 1 1 400px;
-      font-size: 18px;
-      line-height: 1.6;
-      text-align: left;
-      color: #ccc;
-    }
-    .description h2 {
-      color: #75FCC0;
-      font-size: 28px;
-      margin-bottom: 15px;
+      gap: 10px;
+      margin-top: 10px;
     }
 
-    /* ---------------- RESPONSIVE ---------------- */
-    @media (max-width: 900px) {
-      .zigzag-block {
-        flex-direction: column !important;
-      }
-      .diagram-container, .description {
-        flex: 1 1 100%;
-      }
-      .description {
-        text-align: center;
-      }
+    .sidebar a {
+      font-size: 14px;
+      padding: 10px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    .sidebar a:hover {
+      color: var(--text);
+      border-color: rgba(117,252,192,0.35);
+      background: rgba(117,252,192,0.08);
+    }
+
+    /* Main */
+    .main {
+      max-width: var(--max);
+    }
+
+    .topbar {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .title {
+      font-size: 40px;
+      line-height: 1.1;
+      margin: 0;
+      letter-spacing: -0.8px;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 70ch;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(117,252,192,0.35);
+      background: rgba(117,252,192,0.10);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.2px;
+    }
+
+    /* Sections */
+    .section {
+      margin-top: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--panel), var(--panel2));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 18px 0;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+
+    .section-note {
+      margin: 0;
+      color: var(--muted2);
+      font-size: 13px;
+    }
+
+    .section-body {
+      padding: 18px;
+      padding-top: 14px;
+    }
+
+    /* Media cards */
+    .media-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 16px;
+      overflow: hidden;
+      background: rgba(0,0,0,0.22);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.01);
+      border-color: rgba(117,252,192,0.35);
+    }
+
+    .label {
+      padding: 12px 12px 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .label .left {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .label .name {
+      font-weight: 700;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .label .desc {
+      margin: 0;
+      color: var(--muted2);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    /* Phone video frame */
+    .phone-frame {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      border-radius: 26px;
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 18px 55px rgba(0,0,0,0.6);
+      padding: 12px;
+    }
+
+    .phone-screen {
+      width: 100%;
+      aspect-ratio: 9 / 16; /* vertical */
+      border-radius: 20px;
+      overflow: hidden;
+      background: #000;
+      position: relative;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Diagrams */
+    .diagram {
+      width: 100%;
+      display: block;
+      object-fit: contain;
+      background: #000;
+    }
+
+    /* Full-width diagram card */
+    .diagram-card .media {
+      padding: 0;
+    }
+
+    .diagram-wrap {
+      padding: 0;
+    }
+
+    .diagram-wrap img {
+      width: 100%;
+      display: block;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .page { grid-template-columns: 1fr; }
+      .sidebar { position: relative; top: 0; }
+    }
+
+    @media (max-width: 760px) {
+      .title { font-size: 32px; }
+      .media-grid { grid-template-columns: 1fr; }
+      .phone-frame { max-width: 420px; }
     }
   </style>
 </head>
+
 <body>
+  <div class="page">
+    <!-- MAIN -->
+    <main class="main">
+      <header class="topbar">
+        <span class="tag">No Limits • Product / UX</span>
+        <h1 class="title">No Limits</h1>
+        <p class="subtitle">
+          A clean product concept page showing a quick demo first, followed by supporting UX diagrams.
+        </p>
+      </header>
 
-  <!-- NAVIGATION -->
- 
+      <!-- DEMO FIRST -->
+      <section class="section" id="demo">
+        <div class="section-header">
+          <h2 class="section-title">App Demo</h2>
+          <p class="section-note">Vertical screen recording</p>
+        </div>
+        <div class="section-body">
+          <div class="card">
+            <div class="label">
+              <div class="left">
+                <p class="name">Demo Walkthrough</p>
+                <p class="desc">Quick flow of key screens and interactions.</p>
+              </div>
+            </div>
 
-  <!-- BACK BUTTON -->
-   <a href="../../../design.html" class="back-wrapper">&#8592; Back to Projects</a>
+            <div style="padding:16px;">
+              <div class="phone-frame">
+                <div class="phone-screen">
+                  <!-- Replace src with your vertical mp4 path -->
+                    <!-- Replace src with your vertical mp4 path -->
+                  <video controls playsinline preload="metadata" style="width:100%; max-width:380px;">
+  <source src="../vids/nolimitsdemo.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
-  <!-- MAIN CONTENT -->
-  <div class="main">
-    
-    <!-- Block 1 -->
-    <div class="zigzag-block">
-      <div class="diagram-container">
-        <img src="../../../images/diagram1.png" alt="System Breakdown 1">
-      </div>
-      <div class="description">
-        <h2>Overview</h2>
-        <p>No Limits is a fitness and activity tracker designed to improve bodyweight and calisthenics performance. This diagram highlights the main system architecture and the flow of user interactions.</p>
-      </div>
-    </div>
+                </div>
+              </div>
+            </div>
 
-    <!-- Block 2 -->
-    <div class="zigzag-block">
-      <div class="diagram-container">
-        <img src="../../../images/diagram2.png" alt="System Breakdown 2">
-      </div>
-      <div class="description">
-        <h2>Screen Backend Breakdwon</h2>
-        <p>The core engine captures exercises, repetitions, and user metrics in real-time. This breakdown shows how data is processed and visualized to provide actionable insights for all fitness levels.</p>
-      </div>
-    </div>
+          </div>
+        </div>
+      </section>
 
-    <!-- Block 3 -->
-    <div class="zigzag-block">
-      <div class="diagram-container">
-        <img src="../../../images/appdi.png" alt="System Breakdown 3">
-      </div>
-      <div class="description">
-        <h2>User Dashboard</h2>
-        <p>The dashboard presents an overview of daily workouts, progress, and personalized recommendations. It helps the user organize their workouts</p>
-      </div>
-    </div>
+      <!-- DIAGRAMS -->
+      <section class="section" id="diagrams">
+        
+        <div class="section-header">
+          <h2 class="section-title">UX Diagrams</h2>
+          <p class="section-note">Supporting flows & system thinking</p>
+        </div>
 
-    <!-- Block 4 -->
-    <div class="zigzag-block">
-      <div class="diagram-container">
-        <img src="../../../images/cal.png" alt="System Breakdown 4">
-      </div>
-      <div class="description">
-        <h2>Analytics</h2>
-        <p>Data analytics engine generates performance trends and visual insights. Users can track progress over time, see improvement areas, and optimize their workouts efficiently.</p>
-      </div>
-    </div>
+        <div class="section-body">
+          <div class="media-grid">
+            <div class="card diagram-card">
+              <div class="label">
+                <div class="left">
+                  <p class="name">Diagram 1</p>
+                  <p class="desc">High-level flow / concept map.</p>
+                </div>
+              </div>
+              <div class="diagram-wrap">
+                <img class="diagram" src="../../../images/diagram1.png" alt="No Limits Diagram 1" />
+              </div>
+            </div>
 
+            <div class="card diagram-card">
+              <div class="label">
+                <div class="left">
+                  <p class="name">Diagram 2</p>
+                  <p class="desc">Expanded user flow / architecture.</p>
+                </div>
+              </div>
+              <div class="diagram-wrap">
+                <img class="diagram" src="../../../images/diagram2.png" alt="No Limits Diagram 2" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="brand">Aadhya Puttur</div>
+      <div style="color: var(--muted2); font-size: 13px; line-height:1.5;">
+        Quick navigation for this case study.
+      </div>
+      <nav>
+        <a href="../../../index.html">← Home</a>
+        <a href="#demo">Demo</a>
+        <a href="#diagrams">Diagrams</a>
+        <a href="../../../contact.html">Contact</a>
+      </nav>
+    </aside>
   </div>
-
 </body>
 </html>

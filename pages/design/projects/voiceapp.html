@@ -1,204 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aadhya Puttur - App Examples</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mobile App | Aadhya</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+
   <style>
-    /* ---------------- GLOBAL ---------------- */
+    :root{
+      --bg:#0b0b0c;
+      --panel: rgba(255,255,255,0.06);
+      --panel2: rgba(255,255,255,0.04);
+      --text:#ffffff;
+      --muted: rgba(255,255,255,0.72);
+      --muted2: rgba(255,255,255,0.55);
+      --accent:#75FCC0;
+      --border: rgba(255,255,255,0.10);
+      --shadow: 0 12px 40px rgba(0,0,0,0.55);
+      --radius: 18px;
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(120deg, #111, #222);
-      color: #fff;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
+      background:
+        radial-gradient(1200px 600px at 40% -10%, rgba(117,252,192,0.20), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(117,252,192,0.10), transparent 55%),
+        var(--bg);
+      color: var(--text);
     }
 
-    /* ---------------- NAVIGATION ---------------- */
-    /* ---------------- NAVIGATION ---------------- */
-    .navbar {
-      width: 100%;
-      background: #111;
-      padding: 15px 20px;
+    a { color: inherit; text-decoration: none; }
+
+    /* Layout */
+    .page {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 32px;
+      max-width: calc(var(--max) + 220px);
+      margin: 0 auto;
+      padding: 28px 22px 60px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: sticky;
+      top: 18px;
+      align-self: start;
+      height: fit-content;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--panel), transparent);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar .brand {
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      margin-bottom: 14px;
+    }
+
+    .sidebar nav {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
     }
 
-    .nav-content {
-      width: 100%;
-      max-width: 1200px;
+    .sidebar a {
+      font-size: 14px;
+      padding: 10px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    .sidebar a:hover {
+      color: var(--text);
+      border-color: rgba(117,252,192,0.35);
+      background: rgba(117,252,192,0.08);
+    }
+
+    /* Main */
+    .main { max-width: var(--max); }
+
+    .topbar {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .title {
+      font-size: 40px;
+      line-height: 1.1;
+      margin: 0;
+      letter-spacing: -0.8px;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 70ch;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(117,252,192,0.35);
+      background: rgba(117,252,192,0.10);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.2px;
+    }
+
+    /* Sections */
+    .section {
+      margin-top: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--panel), var(--panel2));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 18px 0;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+
+    .section-note {
+      margin: 0;
+      color: var(--muted2);
+      font-size: 13px;
+    }
+
+    .section-body {
+      padding: 18px;
+      padding-top: 14px;
+    }
+
+    /* Media cards */
+    .media-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 16px;
+      overflow: hidden;
+      background: rgba(0,0,0,0.22);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.01);
+      border-color: rgba(117,252,192,0.35);
+    }
+
+    .label {
+      padding: 12px 12px 10px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .navbar a {
-      color: #ccc;
-      padding: 6px 10px;
-      border-radius: 6px;
-      transition: 0.2s;
-      font-size: 16px;
+    .label .left {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
 
-    .navbar a:hover {
-      background: #333;
-      color: #fff;
+    .label .name {
+      font-weight: 700;
+      font-size: 14px;
+      margin: 0;
     }
 
-    .navbar a.active {
-      background: #fff;
-      color: #000;
-      font-weight: bold;
+    .label .desc {
+      margin: 0;
+      color: var(--muted2);
+      font-size: 12px;
+      line-height: 1.4;
     }
 
-    @media (max-width: 600px) {
-      .nav-content {
-        flex-direction: column;
-        gap: 10px;
-      }
+    /* Phone frame */
+    .phone-frame {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      border-radius: 26px;
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 18px 55px rgba(0,0,0,0.6);
+      padding: 12px;
     }
 
-    /* ---------------- BACK BUTTON ---------------- */
-    .back-button {
-      display: inline-block;
-      background: #cc4e1d;
-      color: #fff;
-      padding: 10px 25px;
-      border-radius: 8px;
-      font-weight: 600;
-      margin: 40px 20px 20px 20px;
-      transition: 0.3s;
-    }
-    .back-button:hover {
-      background: #e65c3b;
-    }
-
-    /* ---------------- EXAMPLES GRID ---------------- */
-    .examples {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 50px;
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .container_examples {
-      background: rgba(255, 255, 255, 0.05);
+    .phone-screen {
+      width: 100%;
+      aspect-ratio: 9 / 16;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-      transition: transform 0.3s, box-shadow 0.3s;
+      background: #000;
+      position: relative;
     }
-    .container_examples:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.7);
-    }
-    .vent-titles {
-      padding: 20px;
-      font-weight: 600;
-      font-size: 18px;
-      text-align: center;
-      background: rgba(0,0,0,0.4);
-    }
-    .container_examples img {
+
+    /* Make both img + video fill the screen */
+    .phone-screen img,
+    .phone-screen video {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
-      border-radius: 0 0 20px 20px;
+      background: #000;
     }
 
-    /* ---------------- DEMO SECTION ---------------- */
-    .demo {
-      text-align: center;
-      padding: 80px 20px;
-      max-width: 900px;
-      margin: 0 auto 100px;
-    }
-    .demo-title {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 40px;
-    }
-    .demo video {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-      margin-bottom: 30px;
-    }
-    .demo p {
-      font-size: 18px;
-      color: #ccc;
+    /* Responsive */
+    @media (max-width: 980px) {
+      .page { grid-template-columns: 1fr; }
+      .sidebar { position: relative; top: 0; }
     }
 
-    /* ---------------- RESPONSIVE ---------------- */
-    @media (max-width: 600px) {
-      .menu-links {
-        display: none;
-      }
-      .back-button {
-        margin: 20px;
-      }
-    }
-
-    .back-link {
-      margin-bottom: 20px;
-      display: inline-block;
-      color: #ccc;
-      font-size: 16px;
-      transition: 0.2s;
-      margin-top: 20px;
-      margin-left: 180px;
-    }
-
-    .back-link:hover {
-      color: #fff;
+    @media (max-width: 760px) {
+      .title { font-size: 32px; }
+      .media-grid { grid-template-columns: 1fr; }
+      .phone-frame { max-width: 420px; }
     }
   </style>
 </head>
+
 <body>
-  <!-- NAVIGATION -->
-  <div class="navbar">
-    <div class="nav-content">
-      <div style="font-size:18px; font-weight:bold;">Aadhya Puttur</div>
-      <div style="display:flex; gap:20px;">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="../../../design.html">Design</a>
-        <a href="../../../contact.html">Contact</a>
+  <div class="page">
+    <!-- MAIN -->
+    <main class="main">
+      <header class="topbar">
+        <span class="tag">Mobile App • Product / UX</span>
+        <h1 class="title">Your Friends’ Updates, Your Personal Playlist</h1>
+        <p class="subtitle">
+          A mobile concept for turning friends’ updates into an audio-first playlist experience.
+          Below are two core screens and a short demo.
+        </p>
+      </header>
+
+      <!-- SCREENS -->
+      <section class="section" id="screens">
+        <div class="section-header">
+          <h2 class="section-title">Key Screens</h2>
+          <p class="section-note">Two core moments of the product</p>
+        </div>
+
+        <div class="section-body">
+          <div class="media-grid">
+            <div class="card">
+              <div class="label">
+                <div class="left">
+                  <p class="name">Personal Playlist</p>
+                  <p class="desc">Your friends’ updates organized into a listening queue.</p>
+                </div>
+              </div>
+
+              <div style="padding:16px;">
+                <div class="phone-frame">
+                  <div class="phone-screen">
+                    <img src="../../../images/playlist.png" alt="Playlist screen" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="label">
+                <div class="left">
+                  <p class="name">Now Playing</p>
+                  <p class="desc">Tune into an update like a track — quick, lightweight, social.</p>
+                </div>
+              </div>
+
+              <div style="padding:16px;">
+                <div class="phone-frame">
+                  <div class="phone-screen">
+                    <img src="../../../images/playing.png" alt="Now playing screen" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DEMO -->
+      <section class="section" id="demo">
+        <div class="section-header">
+          <h2 class="section-title">Demo</h2>
+          <p class="section-note">Vertical screen recording</p>
+        </div>
+
+        <div class="section-body">
+          <div class="card">
+            <div class="label">
+              <div class="left">
+                <p class="name">Prototype Walkthrough</p>
+                <p class="desc">Short demo of the primary flow.</p>
+              </div>
+            </div>
+
+            <div style="padding:16px;">
+              <div class="phone-frame">
+                <div class="phone-screen">
+                  <video controls playsinline preload="metadata">
+                    <source src="../../../images/demo.mp4" type="video/mp4" />
+                    <a href="../../../images/demo.mp4" style="color:#fff;">Open video</a>
+                  </video>
+                </div>
+              </div>
+
+              <p style="margin: 14px 0 0; color: var(--muted2); font-size: 13px; text-align:center;">
+         demo
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="brand">Aadhya Puttur</div>
+      <div style="color: var(--muted2); font-size: 13px; line-height:1.5;">
+        Quick navigation for this case study.
       </div>
-    </div>
-  </div>
-
-  <!-- BACK BUTTON -->
-  <a href="../../../design.html" class="back-link">← Back to Design</a>
-
-  <!-- EXAMPLES GRID -->
-  <div class="examples">
-    <div class="container_examples">
-      <div class="vent-titles">Your Friends' Updates, Your Personal Playlist!</div>
-      <img src="../../../images/playlist.png" alt="playlist">
-    </div>
-
-    <div class="container_examples">
-      <div class="vent-titles">Tune into Your Friends' Updates</div>
-      <img src="../../../images/playing.png" alt="playing">
-    </div>
-  </div>
-
-  <!-- DEMO SECTION -->
-  <div class="demo">
-    <p class="demo-title">Demo</p>
-    <video controls>
-      <source src="../../../images/demo.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-
+      <nav>
+        <a href="../../../index.html">← Home</a>
+        <a href="#screens">Screens</a>
+        <a href="#demo">Demo</a>
+        <a href="../../../contact.html">Contact</a>
+      </nav>
+    </aside>
   </div>
 </body>
 </html>
